@@ -160,3 +160,20 @@ paths:
       responses:
         default:
           description: Default response
+  /register/:
+    get:
+      summary: Register a new API via webservice.
+      parameters:
+        - name: url
+          in: url
+          description: >-
+            Retrieves the API specification from a valid URL and automatically
+            registers it.
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: api was registered sucesfully
+        '400':
+          description: api could not be registered
